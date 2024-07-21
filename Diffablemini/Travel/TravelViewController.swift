@@ -25,7 +25,12 @@ class TravelViewController : UIViewController {
         return search
     }()
     
-    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: creatLayout())
+    lazy var collectionView: UICollectionView = {
+        let layout = creatLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .white
+        return collectionView
+    }()
     
     var dataSource : UICollectionViewDiffableDataSource<String, User>!
     
@@ -47,13 +52,14 @@ class TravelViewController : UIViewController {
     }
     
     private func creatLayout() -> UICollectionViewLayout {
-        var configuration = UICollectionLayoutListConfiguration(appearance: .plain)
-        configuration.backgroundColor = .white
-        configuration.showsSeparators = false
-        let layout = UICollectionViewCompositionalLayout.list(using: configuration)
+//        var configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+//        configuration.backgroundColor = .white
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 20, height: 60)
+        layout.minimumLineSpacing = 10
         return layout
     }
-    
+
     private func configurationbg() {
         view.backgroundColor = .white
     }
@@ -62,7 +68,7 @@ class TravelViewController : UIViewController {
         
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(-20)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(-15)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(25)
         }
@@ -92,31 +98,14 @@ class TravelViewController : UIViewController {
     
     private func configureDataSource() {
 
-        var registeration: UICollectionView.CellRegistration<UICollectionViewListCell, User>!
+        var registeration: UICollectionView.CellRegistration<TravelCollectionViewCell, User>!
         
         registeration = UICollectionView.CellRegistration { cell, indexPath, itemIdentifier in
             
-
-            // 셀 배경 설정
-            var cellconfiguration = UIBackgroundConfiguration.listPlainCell()
-            cellconfiguration.backgroundColor = .white
-            
-            cell.backgroundConfiguration = cellconfiguration
-
-            // 셀 설정
-            var content = UIListContentConfiguration.valueCell()
-            content.text = "\(itemIdentifier.name)                                       \(itemIdentifier.date)"
-            content.textProperties.numberOfLines = 0
-            content.textProperties.color = .black
-            content.textProperties.font = .systemFont(ofSize: 16, weight: .bold)
-            content.secondaryText = itemIdentifier.content
-            content.secondaryTextProperties.color = .darkGray
-            content.secondaryTextProperties.font = .systemFont(ofSize: 14, weight: .regular)
-            content.image = UIImage(named: itemIdentifier.image)
-            content.imageProperties.maximumSize = CGSize(width: 45, height: 45)
-            
-            cell.contentConfiguration = content
-   
+            cell.imageView.image = UIImage(named: itemIdentifier.image)
+            cell.nameLabel.text = itemIdentifier.name
+            cell.dateLabel.text = itemIdentifier.date
+            cell.contentLabel.text = itemIdentifier.content
         }
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
