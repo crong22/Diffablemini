@@ -13,3 +13,9 @@ struct Setting: Hashable, Identifiable {
 }
 
 
+struct User : Hashable {
+    let name : String
+    let date : String
+    let image : String
+    let content : String
+}

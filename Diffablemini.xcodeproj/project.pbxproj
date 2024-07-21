@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D82A1C072C4D1105002520D8 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A1C062C4D1105002520D8 /* test.swift */; };
 		D8955AE22C4A27B500951BC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8955AE12C4A27B500951BC5 /* AppDelegate.swift */; };
 		D8955AE42C4A27B500951BC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8955AE32C4A27B500951BC5 /* SceneDelegate.swift */; };
 		D8955AE62C4A27B500951BC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8955AE52C4A27B500951BC5 /* ViewController.swift */; };
@@ -16,9 +17,11 @@
 		D8955AF72C4A27F200951BC5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D8955AF62C4A27F200951BC5 /* SnapKit */; };
 		D8955AFA2C4A280100951BC5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D8955AF92C4A280100951BC5 /* Kingfisher */; };
 		D8955AFC2C4A2B0000951BC5 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8955AFB2C4A2B0000951BC5 /* List.swift */; };
+		D8F8959D2C4D040D00B4038C /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F8959C2C4D040D00B4038C /* TravelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D82A1C062C4D1105002520D8 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		D8955ADE2C4A27B500951BC5 /* Diffablemini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diffablemini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8955AE12C4A27B500951BC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8955AE32C4A27B500951BC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		D8955AED2C4A27B700951BC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8955AEF2C4A27B700951BC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8955AFB2C4A2B0000951BC5 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		D8F8959C2C4D040D00B4038C /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		D8955AE02C4A27B500951BC5 /* Diffablemini */ = {
 			isa = PBXGroup;
 			children = (
+				D8F8959B2C4D03F500B4038C /* Travel */,
 				D8955AE12C4A27B500951BC5 /* AppDelegate.swift */,
 				D8955AE32C4A27B500951BC5 /* SceneDelegate.swift */,
 				D8955AE52C4A27B500951BC5 /* ViewController.swift */,
@@ -70,8 +75,17 @@
 				D8955AEA2C4A27B700951BC5 /* Assets.xcassets */,
 				D8955AEC2C4A27B700951BC5 /* LaunchScreen.storyboard */,
 				D8955AEF2C4A27B700951BC5 /* Info.plist */,
+				D82A1C062C4D1105002520D8 /* test.swift */,
 			);
 			path = Diffablemini;
+			sourceTree = "<group>";
+		};
+		D8F8959B2C4D03F500B4038C /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				D8F8959C2C4D040D00B4038C /* TravelViewController.swift */,
+			);
+			path = Travel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,9 +168,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8955AE62C4A27B500951BC5 /* ViewController.swift in Sources */,
+				D82A1C072C4D1105002520D8 /* test.swift in Sources */,
 				D8955AFC2C4A2B0000951BC5 /* List.swift in Sources */,
 				D8955AE22C4A27B500951BC5 /* AppDelegate.swift in Sources */,
 				D8955AE42C4A27B500951BC5 /* SceneDelegate.swift in Sources */,
+				D8F8959D2C4D040D00B4038C /* TravelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
